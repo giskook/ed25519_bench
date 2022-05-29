@@ -1,6 +1,6 @@
 # ed25519_bench
 
-this resp is the bench test with golang std ed25519 and rust ed25519-ladek.
+this project is the bench test against golang std ed25519 and rust ed25519-dalek(version 1.0.1).
 
 to run the bench:
 
@@ -27,7 +27,7 @@ go test -bench .
 
 4. get the test result
 
-my laptop's result.(m1 chip)
+	my laptop's result.(m1 chip)
 ```
 goos: darwin
 goarch: arm64
@@ -40,4 +40,20 @@ BenchmarkStdEd25519Verify-10    	   23914	     50102 ns/op
 BenchmarkVerify-10              	   32502	     36692 ns/op
 PASS
 ok  	github.com/giskook/ed25519_bench	9.527s
+```
+	my aws's result
+
+```
+goos: linux
+goarch: amd64
+pkg: github.com/giskook/ed25519_bench
+cpu: Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz
+BenchmarkStdEd25519NewKey-16    	   58395	     20548 ns/op
+BenchmarkNewKey-16              	   66391	     18012 ns/op
+BenchmarkStdEd25519Sign-16      	   47431	     25199 ns/op
+BenchmarkSign-16                	   51754	     23096 ns/op
+BenchmarkStdEd25519Verify-16    	   19858	     60420 ns/op
+BenchmarkVerify-16              	   22867	     52159 ns/op
+PASS
+ok  	github.com/giskook/ed25519_bench	9.211s
 ```
