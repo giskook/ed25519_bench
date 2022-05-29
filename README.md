@@ -32,14 +32,15 @@ go test -bench .
 goos: darwin
 goarch: arm64
 pkg: github.com/giskook/ed25519_bench
-BenchmarkStdEd25519NewKey-10    	   61866	     17676 ns/op
-BenchmarkNewKey-10              	   95047	     12670 ns/op
-BenchmarkStdEd25519Sign-10      	   51584	     23155 ns/op
-BenchmarkSign-10                	   70915	     16794 ns/op
-BenchmarkStdEd25519Verify-10    	   23914	     50102 ns/op
-BenchmarkVerify-10              	   32502	     36692 ns/op
+BenchmarkStdEd25519NewKey-10           	   62973	     17480 ns/op
+BenchmarkNewKey-10                     	   94894	     12611 ns/op
+BenchmarkStdEd25519Sign-10             	   51811	     23087 ns/op
+BenchmarkSign-10                       	   70196	     16753 ns/op
+BenchmarkStdEd25519Verify-10           	   23860	     50249 ns/op
+BenchmarkVerify-10                     	   32156	     37192 ns/op
+BenchmarkJustTestForCGoEmptyCall-10    	45658698	        24.94 ns/op
 PASS
-ok  	github.com/giskook/ed25519_bench	9.527s
+ok  	github.com/giskook/ed25519_bench	11.610s
 ```
 	my aws's result
 
@@ -48,12 +49,13 @@ goos: linux
 goarch: amd64
 pkg: github.com/giskook/ed25519_bench
 cpu: Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz
-BenchmarkStdEd25519NewKey-16    	   58395	     20548 ns/op
-BenchmarkNewKey-16              	   66391	     18012 ns/op
-BenchmarkStdEd25519Sign-16      	   47431	     25199 ns/op
-BenchmarkSign-16                	   51754	     23096 ns/op
-BenchmarkStdEd25519Verify-16    	   19858	     60420 ns/op
-BenchmarkVerify-16              	   22867	     52159 ns/op
+BenchmarkStdEd25519NewKey-16           	   58423	     20544 ns/op
+BenchmarkNewKey-16                     	   66846	     18314 ns/op
+BenchmarkStdEd25519Sign-16             	   47661	     25183 ns/op
+BenchmarkSign-16                       	   51940	     23089 ns/op
+BenchmarkStdEd25519Verify-16           	   19798	     60634 ns/op
+BenchmarkVerify-16                     	   22994	     51869 ns/op
+BenchmarkJustTestForCGoEmptyCall-16    	23624349	        50.83 ns/op
 PASS
-ok  	github.com/giskook/ed25519_bench	9.211s
+ok  	github.com/giskook/ed25519_bench	10.498s
 ```
