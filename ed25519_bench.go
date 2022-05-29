@@ -4,6 +4,8 @@ package ed25519_bench
 #cgo CFLAGS: -I./libed25519/include
 #cgo LDFLAGS: -led25519_okc
 #include "ed25519_okc.h"
+void empty(){
+}
 */
 import "C"
 import (
@@ -81,4 +83,8 @@ func Verify(publicKey PublicKey, message, sig []byte) bool {
 	cSig := goBufferToCBuffer(sig)
 
 	return bool(C.okc_ed25519_verify(cPublicKey, cMsg, cSig))
+}
+
+func JustTestForCGoEmptyCall() {
+	C.empty()
 }

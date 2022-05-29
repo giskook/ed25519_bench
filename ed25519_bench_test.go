@@ -58,3 +58,9 @@ func BenchmarkVerify(b *testing.B) {
 		ed25519.Verify(ed25519.PublicKey(pubKey), message, signature)
 	}
 }
+
+func BenchmarkJustTestForCGoEmptyCall(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		ed25519.JustTestForCGoEmptyCall()
+	}
+}
